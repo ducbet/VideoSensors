@@ -1,19 +1,48 @@
-<?xml version="1.0" encoding="utf-8"?><RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    >
+    android:orientation="vertical">
 
     <FrameLayout
         android:id="@+id/camera_preview"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="1">
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/camera_preview"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical">
 
-    </FrameLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="Tập trung nhìn xe đi"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="30sp" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="Cứ giả vờ như lúc vừa đi vừa dùng điện thoại là được"
+            android:textColor="@android:color/white"
+            android:textSize="25sp" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Hình ảnh bị xoay 90 độ nhưng kệ đi"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+
+    </LinearLayout>
 
 
     <ImageButton
@@ -22,20 +51,20 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:padding="20dp"
         android:background="@null"
         android:onClick="addQuality"
+        android:padding="20dp"
         android:src="@android:drawable/ic_menu_edit"
-        android:text="Change quality" />
+        android:text="Change quality"
+        android:visibility="gone" />
 
     <ImageButton
         android:id="@+id/button_capture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:padding="20dp"
-        android:src="@android:drawable/ic_menu_camera"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
         android:background="@null"
         android:text="Capture" />
 
@@ -50,52 +79,53 @@
         android:padding="20dp"
         android:src="@android:drawable/ic_menu_info_details"
         android:text="Add"
-         />
+        android:visibility="gone" />
 
     <ImageButton
+        android:id="@+id/imageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:id="@+id/imageButton"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="right|top"
         android:background="@null"
         android:onClick="addFrameRate"
         android:padding="20dp"
         android:src="@android:drawable/ic_menu_manage"
-        android:layout_gravity="right|top" />
+        android:visibility="gone" />
 
     <Chronometer
+        android:id="@+id/chronometer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/chronometer"
-        android:padding="20dp"
         android:layout_gravity="center_horizontal|top"
-        />
+        android:padding="20dp" />
 
     <TextView
+        android:id="@+id/textViewHeading"
         android:layout_width="wrap_content"
         android:layout_height="55dp"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:text="Heading and speed"
-        android:id="@+id/textViewHeading"
-        android:padding="20dp"
+        android:layout_alignParentTop="true"
         android:layout_gravity="center|top"
-        android:layout_toRightOf="@+id/button_tag"
         android:layout_toEndOf="@+id/button_tag"
-        android:textSize="20dp"
+        android:layout_toRightOf="@+id/button_tag"
+        android:padding="20dp"
+        android:text="Heading and speed"
         android:textColor="@android:color/primary_text_dark"
-        android:layout_alignParentBottom="true" />
+        android:textSize="20dp" />
 
     <TextView
+        android:id="@+id/txt1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:padding="5dp"
-        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/button_capture"
+        android:background="@android:color/holo_blue_dark"
         android:text="."
-        android:id="@+id/txt1"
-        android:textSize="70dp" />
+        android:textSize="200dp"
+        android:visibility="gone" />
 
 
 </RelativeLayout>
